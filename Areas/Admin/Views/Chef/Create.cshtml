@@ -1,0 +1,18 @@
+﻿@using DeliciousMvC.Models
+@model Chefs
+<form method="post" enctype="multipart/form-data">
+
+<input class="form-control form-control-lg"  asp-for="Name" type="text" placeholder="Name">
+<input class="form-control" type="text" asp-for="Work" placeholder="Work ">
+
+        <div class="form-group">
+            <label asp-for="Images" for="exampleFormControlFile1">Example file input</label>
+            <input asp-for="Images" type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+  
+   
+
+        <button type="submit" class="btn btn-success">Create</button>
+    
+
+</form>

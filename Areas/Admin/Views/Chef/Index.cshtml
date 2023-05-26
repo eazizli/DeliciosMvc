@@ -1,0 +1,63 @@
+﻿@using DeliciousMvC.Models
+@model List<Chefs>
+
+<table class="table" >
+<a asp-controller="Chef" asp-action="Create">
+
+    <button type="submit" class="btn btn-success">Create</button>
+</a>
+
+        
+    
+    <thead>
+        <tr>
+           @* 
+            <th scope="col">Settings</th>
+            <th scope="col">Name</th>
+            <th scope="col">Work</th>
+            <th scope="col">Image</th>*@
+            
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>@item.Name</td>
+            <td>@item.Work</td>
+            <td>
+                    <a asp-route-id="@item.Id" asp-controller="Chef" asp-action="Detail">
+
+                        <button type="submit" class="btn btn-primary">Detail</button>
+                    </a>
+
+                    <a asp-route-id="@item.Id" asp-controller="Chef" asp-action="Delete">
+
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </a>
+
+                    <a asp-route-id="@item.Id" asp-controller="Chef" asp-action="Update">
+
+                        <button type="submit" class="btn btn-warning">Update</button>
+                    </a>
+            </td>
+          <td>
+
+                    <img style="width:200px" src="~/assets/img/chefs/@item.ImageName" class="img-fluid" alt="">
+          </td>
+
+            
+           
+        </tr>
+        
+   
+   
+    </tbody>
+    }
+
+    
+
+  
+</table>
